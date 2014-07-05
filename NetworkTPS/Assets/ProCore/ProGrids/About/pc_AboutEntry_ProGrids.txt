@@ -1,0 +1,6 @@
+name: ProGrids
+identifier: ProGrids2_AboutWindowIdentifier
+version: 2.1.2
+revision: 2344
+date: 05-16-2014
+changelog: Assets/ProCore/ProGrids/About/changelog.txt
