@@ -18,14 +18,14 @@ public class NetworkProjectile : MonoBehaviour {
 			
 		}
 		else {
-			transform.position = Vector3.Lerp(transform.position, position, 0.1f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 0.1f);
+			transform.position = Vector3.Lerp(transform.position, position, 0.2f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 0.2f);
 		}
 	}
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if(stream.isWriting) {
-			// This is OURS
+			// This is OURS'
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 		}

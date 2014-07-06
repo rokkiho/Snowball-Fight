@@ -10,6 +10,8 @@ public class NetworkCharacter : MonoBehaviour {
 	Transform head;
 	Quaternion headRotation = Quaternion.identity;
 
+	string name;
+
 	// Use this for initialization
 	void Start () {
 		position = transform.position;
@@ -25,15 +27,17 @@ public class NetworkCharacter : MonoBehaviour {
 
 		}
 		else {
-			transform.position = Vector3.Lerp(transform.position, position, 0.1f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 0.1f);
-			head.rotation = Quaternion.Lerp(head.rotation, headRotation, 0.1f);
+			transform.Find("Name").GetComponent<TextMesh>().text = name;
+			transform.position = Vector3.Lerp(transform.position, position, 0.2f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 0.2f);
+			head.rotation = Quaternion.Lerp(head.rotation, headRotation, 0.2f);
 		}
 	}
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if(stream.isWriting) {
 			// This is OURS
+			stream.SendNext(name);
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 
@@ -42,10 +46,15 @@ public class NetworkCharacter : MonoBehaviour {
 		}
 		else {
 			// This is others'
+			name = (string)stream.ReceiveNext();
 			position = (Vector3)stream.ReceiveNext();
 			rotation = (Quaternion)stream.ReceiveNext();
 
 			headRotation = (Quaternion)stream.ReceiveNext();
 		}
+	}
+
+	public void SetName(string name) {
+		this.name = name;
 	}
 }

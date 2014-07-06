@@ -1,14 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkCharacter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Projectile.cs">
     <Files>
-      <File FileName="Assets\Scripts\NetworkHealth.cs" Line="36" Column="3" />
-      <File FileName="Assets\Scripts\NetworkCharacter.cs" Line="28" Column="74" />
-      <File FileName="Assets\Scripts\FireProjectile.cs" Line="16" Column="2" />
-      <File FileName="Assets\Scripts\TPSCharacter.cs" Line="11" Column="2" />
-      <File FileName="Assets\Scripts\Projectile.cs" Line="37" Column="7" />
-      <File FileName="Assets\Scripts\NetworkManager.cs" Line="122" Column="56" />
-      <File FileName="Assets\Scripts\NetworkProjectile.cs" Line="22" Column="73" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="29" Column="40" />
+      <File FileName="Assets\Photon Unity Networking\Plugins\PhotonNetwork\NetworkingPeer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FireProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TPSCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ParticleEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerName.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

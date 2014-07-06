@@ -12,7 +12,8 @@ public class Projectile : MonoBehaviour {
 	[SerializeField]
 	float damage = 10;
 
-	GameObject ownerObject;
+	[SerializeField]
+	Transform explosionEffect;
 
 	// Update is called once per frame
 	void Update () {
@@ -20,31 +21,27 @@ public class Projectile : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 			
 			if(elapsedTime >= lifeTime) {
-				GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All);
+				GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
 			}
 		}
-	}
-
-	public void SetOwnerObject(GameObject go) {
-		ownerObject = go;
 	}
 
 	void OnCollisionEnter(Collision col) {
 		if(GetComponent<PhotonView>().isMine) {
 			if(col.gameObject.GetComponentInChildren<NetworkHealth>() != null) {
-				//int ownerID = ownerObject.GetComponent<PhotonView>().ownerId;
-				//int targetID = col.gameObject.GetComponent<PhotonView>().ownerId;
-				//Debug.Log (ownerID + " hit " + targetID);
+				GameObject.Find ("NetworkManager").GetComponent<NetworkManager>().ShowCrosshairHit();
 				col.gameObject.GetComponent<PhotonView>().RPC("ApplyDamage", PhotonTargets.All, damage);
 			}
 
-			GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All);
+			GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
 		}
 	}
 
 	[RPC]
-	void DestroyProjectile() {
-		if(GetComponent<PhotonView>().isMine)
+	void DestroyProjectile(Vector3 position) {
+		Instantiate (explosionEffect, position, Quaternion.identity);
+		if(GetComponent<PhotonView>().isMine) {
 			PhotonNetwork.Destroy (gameObject);
+		}
 	}
 }

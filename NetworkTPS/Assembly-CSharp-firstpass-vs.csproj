@@ -183,19 +183,19 @@
      <None Include="Assets\ProCore\ProBuilder\About\Credits.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Kiho/Dropbox/Unity Projects/NetworkTPS/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore">
- <HintPath>C:/Users/Kiho/Dropbox/Unity Projects/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+ <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps">
- <HintPath>C:/Users/Kiho/Dropbox/Unity Projects/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
+ <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
  </Reference>
  <Reference Include="ProCore">
- <HintPath>C:/Users/Kiho/Dropbox/Unity Projects/NetworkTPS/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
  </Reference>
  <Reference Include="SixBySeven">
- <HintPath>C:/Users/Kiho/Dropbox/Unity Projects/NetworkTPS/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
+ <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
