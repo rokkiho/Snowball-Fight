@@ -173,6 +173,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Shaders\3DTextShader.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
