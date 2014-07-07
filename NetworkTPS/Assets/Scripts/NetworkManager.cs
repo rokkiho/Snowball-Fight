@@ -106,9 +106,13 @@ public class NetworkManager : MonoBehaviour {
 			RoomHUDPanel.SetActive (true);
 			PlayerHUD.SetActive (false);
 			
-			UILabel label = RoomHUDPanel.GetComponentInChildren<UILabel> ();
+			UILabel message = RoomHUDPanel.transform.FindChild("Message").GetComponent<UILabel>();
 			
-			label.text = PhotonNetwork.connectionStateDetailed.ToString ();
+			message.text = PhotonNetwork.connectionStateDetailed.ToString ();
+
+			UILabel versionInfo = RoomHUDPanel.transform.FindChild ("VersionInfo").GetComponent<UILabel>();
+
+			versionInfo.text = "ver." + version;
 		}
 		
 		else if(player == null) {
@@ -123,9 +127,9 @@ public class NetworkManager : MonoBehaviour {
 			if(!respawnStarted)
 				StartCoroutine("WaitToRespawn");
 			else {
-				UILabel label = RoomHUDPanel.GetComponentInChildren<UILabel> ();
+				UILabel message = RoomHUDPanel.transform.FindChild("Message").GetComponent<UILabel>();
 				
-				label.text = "Respawn Time: " + (int)respawnTime + " seconds remaining";
+				message.text = "Respawn Time: " + (int)respawnTime + " seconds remaining";
 				
 				respawnTime -= Time.deltaTime;
 			}

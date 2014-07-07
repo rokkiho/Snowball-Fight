@@ -3,7 +3,7 @@ using System.Collections;
 using ExitGames.Client.Photon;
 
 [System.Serializable]
-class NetworkCharPacket {
+internal class NetworkCharPacket {
 	public Vector3 position;
 	public Quaternion rotation;
 	public Quaternion headRotation;
@@ -60,7 +60,7 @@ public class NetworkCharacter : MonoBehaviour {
 
 		}
 		else {
-			transform.Find("Name").GetComponent<TextMesh>().text = name;
+			transform.Find("Name").GetComponent<TextMesh>().text = playerName;
 			transform.position = Vector3.Lerp(transform.position, receivedInfo.position, 0.2f);
 			transform.rotation = Quaternion.Lerp(transform.rotation, receivedInfo.rotation, 0.2f);
 			head.rotation = Quaternion.Lerp(head.rotation, receivedInfo.headRotation, 0.2f);
@@ -70,14 +70,6 @@ public class NetworkCharacter : MonoBehaviour {
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if(stream.isWriting) {
 			// This is OURS
-			/*
-			stream.SendNext(playerName);
-			stream.SendNext(transform.position);
-			stream.SendNext(transform.rotation);
-
-			if(head != null)
-				stream.SendNext (head.rotation);
-			*/
 
 			myInfo.position = transform.position;
 			myInfo.rotation = transform.rotation;
@@ -90,16 +82,9 @@ public class NetworkCharacter : MonoBehaviour {
 		}
 		else {
 			// This is others'
-			/*
-			playerName = (string)stream.ReceiveNext();
-			position = (Vector3)stream.ReceiveNext();
-			rotation = (Quaternion)stream.ReceiveNext();
-
-			headRotation = (Quaternion)stream.ReceiveNext();
-			*/
 
 			playerName = (string)stream.ReceiveNext();
-			receivedInfo = (NetworkCharPacket) DeserializeNetworkCharPacket(SerializeNetworkCharPacket(stream.ReceiveNext()));
+			receivedInfo = (NetworkCharPacket) DeserializeNetworkCharPacket ((byte[])stream.ReceiveNext());
 		}
 	}
 

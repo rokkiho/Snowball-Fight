@@ -35,7 +35,9 @@ public class FireProjectile : MonoBehaviour {
 		if(GetComponent<PhotonView>().isMine)
 			foreach(Transform firePoint in firePoints) {
 				Rigidbody obj = PhotonNetwork.Instantiate(missile.gameObject.name, firePoint.position, Quaternion.identity, 0).GetComponent<Rigidbody>();
+				obj.useGravity = true;
 				obj.AddForce(firePoint.forward * firePower, ForceMode.Impulse);
+				obj.gameObject.GetComponent<SphereCollider>().enabled = true;
 			}
 	}
 }
