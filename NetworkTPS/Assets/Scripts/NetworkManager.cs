@@ -14,9 +14,10 @@ public class NetworkManager : MonoBehaviour {
 	string playerName;
 
 	bool offlineMode = false;
+	bool joinedLobby = false;
 
-	bool gameStarted = false;
 	bool respawnStarted = false;
+	bool playerNameSubmitted = false;
 
 	[SerializeField]
 	float respawnDelay = 5f;
@@ -24,18 +25,11 @@ public class NetworkManager : MonoBehaviour {
 	float respawnTime = 0f;
 
 	[SerializeField]
-	GameObject RoomHUDPanel;
+	GameObject RoomHUDPanelObj;
 	[SerializeField]
-	GameObject PlayerHUD;
+	GameObject PlayerHUDObj;
 	[SerializeField]
-	GameObject CrosshairHit;
-	[SerializeField]
-	GameObject PlayerNameHUD;
-
-	bool showCrosshairHit = false;
-	[SerializeField]
-	float crosshairHitDuration = 2f;
-	float crosshairHitElapsedTime = 0f;
+	GameObject PlayerNameHUDObj;
 
 	int maxPlayersPerRoom = 20;
 
@@ -44,12 +38,12 @@ public class NetworkManager : MonoBehaviour {
 		overviewCamera = GameObject.FindGameObjectWithTag ("OverviewCamera");
 
 		respawns = GameObject.FindGameObjectsWithTag ("Respawn");
-
-		//Connect ();
 	}
 
 	void Connect() {
-		PlayerNameHUD.SetActive (false);
+		PlayerNameHUDObj.SetActive (false);
+		RoomHUDPanelObj.SetActive (true);
+		PlayerHUDObj.SetActive (false);
 
 		if(offlineMode) {
 			PhotonNetwork.offlineMode = true;
@@ -60,101 +54,84 @@ public class NetworkManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator WaitToRespawn() {
-		respawnStarted = true;
-		respawnTime = respawnDelay;
-		yield return new WaitForSeconds (respawnDelay);
-
-		SpawnMyPlayer ();
-		respawnStarted = false;
-	}
-
 	void OnJoinedLobby() {
 		Debug.Log ("Joined Lobby");
 
 		PhotonNetwork.JoinRandomRoom ();
 	}
 
-	void OnPhotonRandomJoinFailed() {
-		Debug.Log ("Failed to join Lobby");
-
-		RoomInfo[] availableRooms = PhotonNetwork.GetRoomList ();
-		
-		foreach(RoomInfo room in availableRooms) {
-			if(room.playerCount < maxPlayersPerRoom)
-				PhotonNetwork.JoinRoom(room.name);
-		}
-		
-		RoomOptions roomOptions = new RoomOptions ();
-		roomOptions.isVisible = true;
-		roomOptions.maxPlayers = maxPlayersPerRoom;
-
-		PhotonNetwork.JoinOrCreateRoom ("Room#" + Random.Range(0, 999999), roomOptions, TypedLobby.Default);
+	void OnJoinedRoom() {
+		Debug.Log ("Joined Room: " + PhotonNetwork.room.name);
 	}
 
-	void OnJoinedRoom() {
-		Debug.Log ("Joined Room");
-
-		gameStarted = true;
+	void OnPhotonRandomJoinFailed() {
+		PhotonNetwork.CreateRoom (null);
 	}
 
 	void Update() {
-		if(!gameStarted) {
+		if(!playerNameSubmitted) {
 			// If the game has not started (Joining room) yet, unlock the mouse and show the room HUD
 			Screen.lockCursor = false;
+
+			PlayerNameHUDObj.SetActive (true);
+			RoomHUDPanelObj.SetActive (false);
+			PlayerHUDObj.SetActive (false);
 			
-			RoomHUDPanel.SetActive (true);
-			PlayerHUD.SetActive (false);
-			
-			UILabel message = RoomHUDPanel.transform.FindChild("Message").GetComponent<UILabel>();
+			UILabel message = RoomHUDPanelObj.transform.FindChild("Message").GetComponent<UILabel>();
 			
 			message.text = PhotonNetwork.connectionStateDetailed.ToString ();
 
-			UILabel versionInfo = RoomHUDPanel.transform.FindChild ("VersionInfo").GetComponent<UILabel>();
+			UILabel versionInfo = RoomHUDPanelObj.transform.FindChild ("VersionInfo").GetComponent<UILabel>();
 
 			versionInfo.text = "ver." + version;
+
+			return;
 		}
-		
-		else if(player == null) {
+
+		if(PhotonNetwork.room == null) return;
+
+		if(player == null) {
 			// If the player is null (not spawned yet or waiting for respawn), unlock the mouse and show the room HUD
 			Screen.lockCursor = false;
-			
-			RoomHUDPanel.SetActive (true);
-			PlayerHUD.SetActive (false);
+
+			PlayerHUD.HideHP();
+
+			PlayerNameHUDObj.SetActive (false);
+			RoomHUDPanelObj.SetActive (true);
+			PlayerHUDObj.SetActive (false);
 			
 			overviewCamera.SetActive(true);
 			
 			if(!respawnStarted)
 				StartCoroutine("WaitToRespawn");
 			else {
-				UILabel message = RoomHUDPanel.transform.FindChild("Message").GetComponent<UILabel>();
+				UILabel message = RoomHUDPanelObj.transform.FindChild("Message").GetComponent<UILabel>();
 				
 				message.text = "Respawn Time: " + (int)respawnTime + " seconds remaining";
 				
 				respawnTime -= Time.deltaTime;
 			}
 		}
+
 		else {
 			// If the player is active, lock the cursor and show the player HUD
 			Screen.lockCursor = true;
-			
-			RoomHUDPanel.SetActive (false);
-			PlayerHUD.SetActive(true);
-			
-			UILabel label = PlayerHUD.GetComponentInChildren<UILabel>();
-			label.text = player.GetComponent<NetworkHealth>().GetCurrHealth() + "";
-			
-			if(showCrosshairHit) {
-				CrosshairHit.SetActive(true);
-				crosshairHitElapsedTime += Time.deltaTime;
-				
-				if(crosshairHitElapsedTime >= crosshairHitDuration) {
-					showCrosshairHit = false;
-				}
-			}
-			else
-				CrosshairHit.SetActive(false);
+
+			PlayerNameHUDObj.SetActive (false);
+			RoomHUDPanelObj.SetActive (false);
+			PlayerHUDObj.SetActive(true);
+
+			PlayerHUD.ShowHP();
 		}
+	}
+
+	IEnumerator WaitToRespawn() {
+		respawnStarted = true;
+		respawnTime = respawnDelay;
+		yield return new WaitForSeconds (respawnDelay);
+		
+		SpawnMyPlayer ();
+		respawnStarted = false;
 	}
 
 	void SpawnMyPlayer() {
@@ -182,24 +159,15 @@ public class NetworkManager : MonoBehaviour {
 		player.transform.FindChild ("Head/Main Camera").gameObject.SetActive (true);
 
 		player.GetComponent<NetworkHealth> ().enabled = true;
-
 		player.GetComponent<NetworkCharacter> ().SetName (playerName);
 	}
 
-	public void ShowCrosshairHit() {
-		showCrosshairHit = true;
-		crosshairHitElapsedTime = 0f;
-	}
-
-	public GameObject GetPlayer() {
-		return player;
-	}
-
 	public void OnPlayerNameSubmit() {
-		string name = PlayerNameHUD.transform.FindChild ("Window/NameInput/Label").GetComponent<UILabel> ().text;
+		string name = PlayerNameHUDObj.transform.FindChild ("Window/NameInput/Label").GetComponent<UILabel> ().text;
 
 		if(name != null && name.Length > 0) {
 			playerName = name;
+			playerNameSubmitted = true;
 			Connect();
 		}
 	}

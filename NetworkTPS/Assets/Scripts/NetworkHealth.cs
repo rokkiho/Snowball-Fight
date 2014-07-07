@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(PhotonView))]
-public class NetworkHealth : MonoBehaviour {
+public class NetworkHealth : Photon.MonoBehaviour {
 
 	[SerializeField]
 	float maxHealth = 100;
@@ -22,6 +22,10 @@ public class NetworkHealth : MonoBehaviour {
 		return maxHealth;
 	}
 
+	void Update() {
+		HPHUD.UpdateHealthInfo (currHealth, maxHealth);
+	}
+
 	[RPC]
 	public void ApplyDamage(float amount) {
 		currHealth -= amount;
@@ -33,7 +37,7 @@ public class NetworkHealth : MonoBehaviour {
 	}
 
 	void Die() {
-		if(GetComponent<PhotonView>().isMine)
+		if(photonView.isMine)
 			PhotonNetwork.Destroy(gameObject);
 	}
 }

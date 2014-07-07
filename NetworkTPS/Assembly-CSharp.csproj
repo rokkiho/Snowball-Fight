@@ -219,12 +219,14 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\Scripts\CameraCollision.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
-     <Compile Include="Assets\Scripts\HPHUDDetector.cs" />
+     <Compile Include="Assets\Scripts\HPHUD.cs" />
      <Compile Include="Assets\Scripts\NetworkCharacter.cs" />
      <Compile Include="Assets\Scripts\NetworkHealth.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkPlayer.cs" />
      <Compile Include="Assets\Scripts\NetworkProjectile.cs" />
      <Compile Include="Assets\Scripts\ParticleEffect.cs" />
+     <Compile Include="Assets\Scripts\PlayerHUD.cs" />
      <Compile Include="Assets\Scripts\PlayerName.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\TPSCharacter.cs" />

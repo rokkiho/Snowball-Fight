@@ -16,17 +16,7 @@ internal class NetworkCharPacket {
 }
 
 [RequireComponent(typeof(PhotonView))]
-public class NetworkCharacter : MonoBehaviour {
-	/*
-	Vector3 position = Vector3.zero;
-	Quaternion rotation = Quaternion.identity;
-
-	Transform head;
-	Quaternion headRotation = Quaternion.identity;
-
-	string playerName;
-	*/
-
+public class NetworkCharacter : Photon.MonoBehaviour {
 	string playerName;
 	Transform head;
 
@@ -37,11 +27,7 @@ public class NetworkCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//position = transform.position;
-		//rotation = transform.rotation;
-
 		head = transform.FindChild ("Head");
-		//headRotation = head.rotation;
 
 		myInfo.position = transform.position;
 		myInfo.rotation = transform.rotation;
@@ -70,7 +56,6 @@ public class NetworkCharacter : MonoBehaviour {
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if(stream.isWriting) {
 			// This is OURS
-
 			myInfo.position = transform.position;
 			myInfo.rotation = transform.rotation;
 

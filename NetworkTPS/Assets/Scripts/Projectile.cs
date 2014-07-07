@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour {
 	void OnCollisionEnter(Collision col) {
 		if(GetComponent<PhotonView>().isMine) {
 			if(col.gameObject.GetComponentInChildren<NetworkHealth>() != null) {
-				GameObject.Find ("NetworkManager").GetComponent<NetworkManager>().ShowCrosshairHit();
+				PlayerHUD.ShowCrossHairHit();
 				col.gameObject.GetComponent<PhotonView>().RPC("ApplyDamage", PhotonTargets.All, damage);
 			}
 
