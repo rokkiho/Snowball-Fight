@@ -10,7 +10,7 @@ public class NetworkCharacter : MonoBehaviour {
 	Transform head;
 	Quaternion headRotation = Quaternion.identity;
 
-	string name;
+	string playerName;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +37,7 @@ public class NetworkCharacter : MonoBehaviour {
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if(stream.isWriting) {
 			// This is OURS
-			stream.SendNext(name);
+			stream.SendNext(playerName);
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
 
@@ -46,7 +46,7 @@ public class NetworkCharacter : MonoBehaviour {
 		}
 		else {
 			// This is others'
-			name = (string)stream.ReceiveNext();
+			playerName = (string)stream.ReceiveNext();
 			position = (Vector3)stream.ReceiveNext();
 			rotation = (Quaternion)stream.ReceiveNext();
 
@@ -55,6 +55,6 @@ public class NetworkCharacter : MonoBehaviour {
 	}
 
 	public void SetName(string name) {
-		this.name = name;
+		playerName = name;
 	}
 }

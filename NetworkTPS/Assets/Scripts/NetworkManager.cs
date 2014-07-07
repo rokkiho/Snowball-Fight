@@ -37,7 +37,7 @@ public class NetworkManager : MonoBehaviour {
 	float crosshairHitDuration = 2f;
 	float crosshairHitElapsedTime = 0f;
 
-	int maxPlayersPerRoom = 10;
+	int maxPlayersPerRoom = 20;
 
 	// Use this for initialization
 	void Start () {
