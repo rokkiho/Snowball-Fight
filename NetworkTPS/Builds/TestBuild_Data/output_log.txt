@@ -1,678 +1,149 @@
 Initialize engine version: 4.5.1f3 (73cd57f80e3e)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.3523]
-    Renderer: NVIDIA GeForce GTX 560 
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.1422]
+    Renderer: NVIDIA GeForce 9800 GTX+
     Vendor:   NVIDIA
-    VRAM:     971 MB (via DXGI)
+    VRAM:     1390 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll into Unity Child Domain
-- Completed reload, in  0.052 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll into Unity Child Domain
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll (this message is harmless)
+Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll into Unity Child Domain
+- Completed reload, in  0.191 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.dll (this message is harmless)
-Initialize engine version: 4.5.1f3 (73cd57f80e3e)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.3523]
-    Renderer: NVIDIA GeForce GTX 560 
-    Vendor:   NVIDIA
-    VRAM:     971 MB (via DXGI)
-    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderCore.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProBuilderMeshOps.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll into Unity Child Domain
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll (this message is harmless)
-Loading C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Kiho\Documents\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.dll (this message is harmless)
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\System.dll (this message is harmless)
 Joined Lobby
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Joined Room: 4c78037b-114b-4a0e-ab76-1c4aff28f1a9
+Joined Room: c5cd1ce9-84a2-493f-8ea4-813b8ac9b781
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Joined Lobby
+Had to lookup view that wasn't in dict: View (0)1002 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Joined Room: 4c78037b-114b-4a0e-ab76-1c4aff28f1a9
+Had to lookup view that wasn't in dict: View (0)1007 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)1009 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)1011 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 2001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1013 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1050 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1015 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1050 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1017 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=1050 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1019 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1052 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1025 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1052 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1027 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=1052 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1029 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Can't execute received Destroy request for view ID=2001 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2003 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2003 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Can't execute received Destroy request for view ID=2003 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2007 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2007 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Can't execute received Destroy request for view ID=2007 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2009 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Had to lookup view that wasn't in dict: View (0)2009 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Can't execute received Destroy request for view ID=2009 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Raycast Hit
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1071 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1071 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Can't execute received Destroy request for view ID=1071 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1097 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1097 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Can't execute received Destroy request for view ID=1097 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1111 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1111 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Can't execute received Destroy request for view ID=1111 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1113 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1113 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Can't execute received Destroy request for view ID=1113 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1115 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1115 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Can't execute received Destroy request for view ID=1115 as GO can't be found. From player/actorNr: 1 GO to destroy=  originating Player=
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

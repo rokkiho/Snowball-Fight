@@ -37,7 +37,9 @@ public class NetworkHealth : Photon.MonoBehaviour {
 	}
 
 	void Die() {
-		if(photonView.isMine)
+		if(photonView.instantiationId == 0)
+			Destroy (gameObject);
+		else if(photonView.isMine)
 			PhotonNetwork.Destroy(gameObject);
 	}
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(PhotonView))]
-public class Projectile : MonoBehaviour {
+public class Projectile : Photon.MonoBehaviour {
 
 	[SerializeField]
 	float lifeTime = 2f;
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 			
 			if(elapsedTime >= lifeTime) {
-				GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
+				photonView.RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
 			}
 		}
 	}
@@ -30,17 +30,20 @@ public class Projectile : MonoBehaviour {
 		if(GetComponent<PhotonView>().isMine) {
 			if(col.gameObject.GetComponentInChildren<NetworkHealth>() != null) {
 				PlayerHUD.ShowCrossHairHit();
-				col.gameObject.GetComponent<PhotonView>().RPC("ApplyDamage", PhotonTargets.All, damage);
+				PhotonView targetPv = col.gameObject.GetComponent<PhotonView>();
+				targetPv.RPC("ApplyDamage", PhotonTargets.All, damage);
 			}
 
-			GetComponent<PhotonView>().RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
+			photonView.RPC ("DestroyProjectile", PhotonTargets.All, transform.position);
 		}
 	}
 
 	[RPC]
 	void DestroyProjectile(Vector3 position) {
 		Instantiate (explosionEffect, position, Quaternion.identity);
-		if(GetComponent<PhotonView>().isMine) {
+		if(photonView.instantiationId == 0)
+			Destroy (gameObject);
+		else if(photonView.isMine) {
 			PhotonNetwork.Destroy (gameObject);
 		}
 	}

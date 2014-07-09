@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>G:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>G:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -220,11 +220,15 @@
      <Compile Include="Assets\Scripts\CameraCollision.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\HPHUD.cs" />
+     <Compile Include="Assets\Scripts\HUDController.cs" />
      <Compile Include="Assets\Scripts\NetworkCharacter.cs" />
      <Compile Include="Assets\Scripts\NetworkHealth.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkMatch.cs" />
      <Compile Include="Assets\Scripts\NetworkPlayer.cs" />
      <Compile Include="Assets\Scripts\NetworkProjectile.cs" />
+     <Compile Include="Assets\Scripts\NetworkRoom.cs" />
+     <Compile Include="Assets\Scripts\NetworkTeam.cs" />
      <Compile Include="Assets\Scripts\ParticleEffect.cs" />
      <Compile Include="Assets\Scripts\PlayerHUD.cs" />
      <Compile Include="Assets\Scripts\PlayerName.cs" />
@@ -351,22 +355,22 @@
      <None Include="Assets\ProCore\ProBuilder\About\Credits.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
  </Reference>
  <Reference Include="ProCore">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/ProCore.dll</HintPath>
  </Reference>
  <Reference Include="SixBySeven">
- <HintPath>C:/Users/Kiho/Documents/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
+ <HintPath>G:/GitHub/Snowball-Fight/NetworkTPS/Assets/ProCore/Shared/Code/SixBySeven.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
