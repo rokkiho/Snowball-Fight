@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(PhotonView))]
-public class FireProjectile : MonoBehaviour {
+public class FireProjectile : Photon.MonoBehaviour {
 	[SerializeField]
 	Rigidbody missile;
 
@@ -19,25 +19,26 @@ public class FireProjectile : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		fireTime += Time.deltaTime;
+		if(photonView.isMine) {
+			fireTime += Time.deltaTime;
 
-		if(Input.GetAxis ("Fire1") > 0f) {
-			if(fireTime >= fireRate) {
-				GetComponent<PhotonView>().RPC ("CreateProjectile", PhotonTargets.All);
-
-				fireTime = 0;
+			if(Input.GetAxis ("Fire1") > 0f) {
+				if(fireTime >= fireRate) {
+					photonView.RPC ("CreateProjectile", PhotonTargets.MasterClient);
+				}
 			}
 		}
 	}
 
 	[RPC]
 	void CreateProjectile() {
-		if(GetComponent<PhotonView>().isMine)
-			foreach(Transform firePoint in firePoints) {
-				Rigidbody obj = PhotonNetwork.Instantiate(missile.gameObject.name, firePoint.position, Quaternion.identity, 0).GetComponent<Rigidbody>();
-				obj.useGravity = true;
-				obj.AddForce(firePoint.forward * firePower, ForceMode.Impulse);
-				obj.gameObject.GetComponent<SphereCollider>().enabled = true;
-			}
+		foreach(Transform firePoint in firePoints) {
+			Rigidbody obj = PhotonNetwork.Instantiate(missile.gameObject.name, firePoint.position, Quaternion.identity, 0).GetComponent<Rigidbody>();
+			obj.gameObject.GetComponent<SphereCollider>().enabled = true;
+			obj.useGravity = true;
+			obj.AddForce(firePoint.forward * firePower, ForceMode.Impulse);
+		}
+		
+		fireTime = 0;
 	}
 }

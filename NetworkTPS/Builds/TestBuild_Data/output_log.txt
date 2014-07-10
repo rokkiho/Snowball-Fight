@@ -25,7 +25,7 @@ Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Man
 Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll into Unity Child Domain
 Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll (this message is harmless)
 Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll into Unity Child Domain
-- Completed reload, in  0.191 seconds
+- Completed reload, in  0.179 seconds
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -35,27 +35,19 @@ Joined Lobby
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Joined Room: c5cd1ce9-84a2-493f-8ea4-813b8ac9b781
+Joined Room: 84740898-ac12-499a-8571-1d8ffb12fce8
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1002 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1016 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1007 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1014 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)1009 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1011 on Snowball(Clone) 
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Had to lookup view that wasn't in dict: View (0)1013 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1018 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
@@ -71,7 +63,51 @@ Had to lookup view that wasn't in dict: View (0)1019 on Snowball(Clone)
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
+Had to lookup view that wasn't in dict: View (0)1026 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1026 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1024 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1028 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1022 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1024 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1022 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1028 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
 Had to lookup view that wasn't in dict: View (0)1025 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1025 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1023 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1027 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
@@ -83,67 +119,167 @@ Had to lookup view that wasn't in dict: View (0)1029 on Snowball(Clone)
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=2001 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1023 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2003 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1029 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2003 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1034 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=2003 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1037 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2007 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1032 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2007 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1038 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=2007 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1037 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2009 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1033 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Had to lookup view that wasn't in dict: View (0)2009 on Snowball(Clone) 
+Had to lookup view that wasn't in dict: View (0)1035 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Can't execute received Destroy request for view ID=2009 as GO can't be found. From player/actorNr: 2 GO to destroy=  originating Player=
+Had to lookup view that wasn't in dict: View (0)1035 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1039 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1034 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1036 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1038 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1036 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+Had to lookup view that wasn't in dict: View (0)1032 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1033 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1039 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1030 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1046 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1048 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1050 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1049 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1047 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1051 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1058 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1060 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1054 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1058 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1057 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1057 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1055 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1059 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1059 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1061 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1055 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1061 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1056 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1060 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1054 on Snowball(Clone) 
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Had to lookup view that wasn't in dict: View (0)1056 on Snowball(Clone) 
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

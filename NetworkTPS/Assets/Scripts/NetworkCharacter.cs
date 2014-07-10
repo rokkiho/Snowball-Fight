@@ -2,120 +2,121 @@
 using System.Collections;
 using ExitGames.Client.Photon;
 
-[System.Serializable]
-internal class NetworkCharPacket {
-	public Vector3 position;
-	public Quaternion rotation;
-	public Quaternion headRotation;
-
-	public NetworkCharPacket() {
-		position = Vector3.zero;
-		rotation = Quaternion.identity;
-		headRotation = Quaternion.identity;
-	}
-}
-
-[RequireComponent(typeof(PhotonView))]
+[RequireComponent(typeof(PhotonView), typeof(CharacterController))]
 public class NetworkCharacter : Photon.MonoBehaviour {
+	// Player properties
 	string playerName;
 	Transform head;
+	[SerializeField]
+	float maxHealth = 100;
+	float currHealth;
 
-	NetworkCharPacket myInfo = new NetworkCharPacket();
-	NetworkCharPacket receivedInfo = new NetworkCharPacket();
+	// Player movement
+	[SerializeField]
+	float movementSpeed = 6;
+	[SerializeField]
+	float jumpSpeed = 8;
+	CharacterController controller;
+	float gravity = Physics.gravity.y;
+	Vector3 moveDirection = Vector3.zero;
 
-	static bool registeredType = false;
+	// Network properties
+	Vector3 realPosition = Vector3.zero;
+	Quaternion realRotation = Quaternion.identity;
+	Quaternion realHeadRotation = Quaternion.identity;
 
 	// Use this for initialization
 	void Start () {
 		head = transform.FindChild ("Head");
+		controller = GetComponent<CharacterController> ();
+		currHealth = maxHealth;
 
-		myInfo.position = transform.position;
-		myInfo.rotation = transform.rotation;
-		myInfo.headRotation = head.rotation;
-
-		if(!registeredType) {
-			PhotonPeer.RegisterType(typeof(NetworkCharPacket), (byte)'N', SerializeNetworkCharPacket, DeserializeNetworkCharPacket);
-			registeredType = true;
-		}
-
+		realPosition = transform.position;
+		realRotation = transform.rotation;
+		realHeadRotation = head.rotation;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(GetComponent<PhotonView>().isMine) {
-
+			HandleMovement();
+			HPHUD.UpdateHealthInfo (currHealth, maxHealth);
 		}
 		else {
 			transform.Find("Name").GetComponent<TextMesh>().text = playerName;
-			transform.position = Vector3.Lerp(transform.position, receivedInfo.position, 0.2f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, receivedInfo.rotation, 0.2f);
-			head.rotation = Quaternion.Lerp(head.rotation, receivedInfo.headRotation, 0.2f);
+			transform.position = Vector3.Lerp(transform.position, realPosition, 0.2f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, realRotation, 0.2f);
+			head.rotation = Quaternion.Lerp(head.rotation, realHeadRotation, 0.2f);
 		}
 	}
 
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
-		if(stream.isWriting) {
-			// This is OURS
-			myInfo.position = transform.position;
-			myInfo.rotation = transform.rotation;
-
-			if(head != null)
-				myInfo.headRotation = head.rotation;
-
-			stream.SendNext(playerName);
-			stream.SendNext(SerializeNetworkCharPacket(myInfo));
+	void HandleMovement() {
+		if(controller.isGrounded) {
+			moveDirection = new Vector3(Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
+			moveDirection = transform.TransformDirection(moveDirection);
+			moveDirection *= movementSpeed;
+			
+			if(Input.GetButton ("Jump")) {
+				moveDirection.y = jumpSpeed;
+			}
 		}
-		else {
-			// This is others'
-
-			playerName = (string)stream.ReceiveNext();
-			receivedInfo = (NetworkCharPacket) DeserializeNetworkCharPacket ((byte[])stream.ReceiveNext());
-		}
+		
+		// Apply gravity
+		moveDirection.y += gravity * Time.deltaTime;
+		
+		// Move the controller
+		controller.Move (moveDirection * Time.deltaTime);
 	}
 
 	public void SetName(string name) {
 		playerName = name;
 	}
 
-	static byte[] SerializeNetworkCharPacket(object customobject) {
-		NetworkCharPacket packet = (NetworkCharPacket)customobject;
-
-		byte[] bytes = new byte[3 * 4 + 4 * 4 + 4 * 4];
-		int index = 0;
-		Protocol.Serialize (packet.position.x, bytes, ref index);
-		Protocol.Serialize (packet.position.y, bytes, ref index);
-		Protocol.Serialize (packet.position.z, bytes, ref index);
-
-		Protocol.Serialize (packet.rotation.x, bytes, ref index);
-		Protocol.Serialize (packet.rotation.y, bytes, ref index);
-		Protocol.Serialize (packet.rotation.z, bytes, ref index);
-		Protocol.Serialize (packet.rotation.w, bytes, ref index);
-
-		Protocol.Serialize (packet.headRotation.x, bytes, ref index);
-		Protocol.Serialize (packet.headRotation.y, bytes, ref index);
-		Protocol.Serialize (packet.headRotation.z, bytes, ref index);
-		Protocol.Serialize (packet.headRotation.w, bytes, ref index);
-
-		return bytes;
+	public float GetCurrHealth() {
+		return currHealth;
+	}
+	
+	public float GetMaxHealth() {
+		return maxHealth;
+	}
+	
+	public void ApplyDamage(float amount) {
+		currHealth -= amount;
+		
+		if(currHealth <= 0) {
+			currHealth = 0;
+			Die();
+		}
+	}
+	
+	void Die() {
+		if(photonView.instantiationId == 0)
+			Destroy (gameObject);
+		else if(PhotonNetwork.isMasterClient)
+			PhotonNetwork.Destroy(gameObject);
 	}
 
-	static object DeserializeNetworkCharPacket(byte[] bytes) {
-		NetworkCharPacket packet = new NetworkCharPacket ();
-		int index = 0;
-		Protocol.Deserialize (out packet.position.x, bytes, ref index);
-		Protocol.Deserialize (out packet.position.y, bytes, ref index);
-		Protocol.Deserialize (out packet.position.z, bytes, ref index);
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+		if(head == null) 
+			return;
 
-		Protocol.Deserialize (out packet.rotation.x, bytes, ref index);
-		Protocol.Deserialize (out packet.rotation.y, bytes, ref index);
-		Protocol.Deserialize (out packet.rotation.z, bytes, ref index);
-		Protocol.Deserialize (out packet.rotation.w, bytes, ref index);
+		if(stream.isWriting) {
+			// This is OURS
 
-		Protocol.Deserialize (out packet.headRotation.x, bytes, ref index);
-		Protocol.Deserialize (out packet.headRotation.y, bytes, ref index);
-		Protocol.Deserialize (out packet.headRotation.z, bytes, ref index);
-		Protocol.Deserialize (out packet.headRotation.w, bytes, ref index);
-
-		return packet;
+			stream.SendNext(playerName);
+			stream.SendNext(currHealth);
+			stream.SendNext(transform.position);
+			stream.SendNext(transform.rotation);
+			stream.SendNext(head.rotation);
+		}
+		else {
+			// This is others'
+			
+			playerName = (string)stream.ReceiveNext();
+			currHealth = (float)stream.ReceiveNext();
+			realPosition = (Vector3)stream.ReceiveNext();
+			realRotation = (Quaternion)stream.ReceiveNext();
+			realHeadRotation = (Quaternion)stream.ReceiveNext();
+		}
 	}
 }

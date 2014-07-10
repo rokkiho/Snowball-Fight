@@ -83,8 +83,6 @@ internal class DeathMatch : Match {
 		
 		player = PhotonNetwork.Instantiate ("Player", spawnSpot.position, spawnSpot.transform.localRotation, 0);
 		
-		player.GetComponent<TPSCharacter> ().enabled = true;
-		
 		MouseLook[] mouseLooks = player.GetComponentsInChildren<MouseLook>();
 		foreach(MouseLook script in mouseLooks)
 			script.enabled = true;
@@ -95,7 +93,6 @@ internal class DeathMatch : Match {
 		
 		player.transform.FindChild ("Head/Main Camera").gameObject.SetActive (true);
 		
-		player.GetComponent<NetworkHealth> ().enabled = true;
 		player.GetComponent<NetworkCharacter> ().SetName (NetworkManager.GetPlayerName());
 	}
 }
