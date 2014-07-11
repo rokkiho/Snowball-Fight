@@ -32,7 +32,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		controller = GetComponent<CharacterController> ();
 		currHealth = maxHealth;
 
-		//realPosition = transform.position;
+		realPosition = transform.position;
 		realRotation = transform.rotation;
 		realHeadRotation = head.rotation;
 	}
@@ -108,11 +108,13 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 
 	[RPC]
 	public void ApplyDamage(float amount) {
-		currHealth -= amount;
-		
-		if(currHealth <= 0) {
-			currHealth = 0;
-			Die();
+		if(photonView.isMine) {
+			currHealth -= amount;
+			
+			if(currHealth <= 0) {
+				currHealth = 0;
+				Die();
+			}
 		}
 	}
 	

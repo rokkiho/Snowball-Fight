@@ -60,7 +60,7 @@ public class NetworkProjectile : MonoBehaviour {
 		NetworkCharacter character = col.gameObject.GetComponent<NetworkCharacter>();
 		if(character != null && !character.GetNetworkView().isMine) {
 			PlayerHUD.ShowCrossHairHit();
-			//character.GetNetworkView().RPC ("ApplyDamage", PhotonTargets.All, damage);
+			character.GetNetworkView().RPC ("ApplyDamage", PhotonTargets.All, damage);
 		}
 		OnProjectileHit();
 	}
