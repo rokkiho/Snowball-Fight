@@ -24,6 +24,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 	Vector3 realPosition = Vector3.zero;
 	Quaternion realRotation = Quaternion.identity;
 	Quaternion realHeadRotation = Quaternion.identity;
+	double lastNetworkReceivedTime;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		controller = GetComponent<CharacterController> ();
 		currHealth = maxHealth;
 
-		realPosition = transform.position;
+		//realPosition = transform.position;
 		realRotation = transform.rotation;
 		realHeadRotation = head.rotation;
 	}
@@ -44,10 +45,31 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		}
 		else {
 			transform.Find("Name").GetComponent<TextMesh>().text = playerName;
-			transform.position = Vector3.Lerp(transform.position, realPosition, 0.2f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, realRotation, 0.2f);
-			head.rotation = Quaternion.Lerp(head.rotation, realHeadRotation, 0.2f);
+
+			pingInSeconds = (float)PhotonNetwork.GetPing () * 0.001f;
+			timeSinceLastUpdate = (float)(PhotonNetwork.time - lastNetworkReceivedTime);
+			totalTimePassed = pingInSeconds + timeSinceLastUpdate;
+
+			UpdateNetworkedPosition();
+			UpdateNetworkedRotation();
+			UpdateNetworkedHeadRotation();
 		}
+	}
+
+	float pingInSeconds;
+	float timeSinceLastUpdate;
+	float totalTimePassed;
+
+	void UpdateNetworkedPosition() {
+		transform.position = Vector3.Lerp (transform.position, realPosition, totalTimePassed / 5);
+	}
+
+	void UpdateNetworkedRotation() {
+		transform.rotation = Quaternion.Lerp (transform.rotation, realRotation, totalTimePassed / 5);
+	}
+
+	void UpdateNetworkedHeadRotation() {
+		head.rotation = Quaternion.Lerp(head.rotation, realHeadRotation, totalTimePassed / 5);
 	}
 
 	void HandleMovement() {
@@ -79,7 +101,12 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 	public float GetMaxHealth() {
 		return maxHealth;
 	}
-	
+
+	public PhotonView GetNetworkView() {
+		return photonView;
+	}
+
+	[RPC]
 	public void ApplyDamage(float amount) {
 		currHealth -= amount;
 		
@@ -92,7 +119,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 	void Die() {
 		if(photonView.instantiationId == 0)
 			Destroy (gameObject);
-		else if(PhotonNetwork.isMasterClient)
+		else if(photonView.isMine)
 			PhotonNetwork.Destroy(gameObject);
 	}
 
@@ -117,6 +144,8 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 			realPosition = (Vector3)stream.ReceiveNext();
 			realRotation = (Quaternion)stream.ReceiveNext();
 			realHeadRotation = (Quaternion)stream.ReceiveNext();
+
+			lastNetworkReceivedTime = info.timestamp;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(PhotonView))]
 public class FireProjectile : Photon.MonoBehaviour {
@@ -17,28 +18,64 @@ public class FireProjectile : Photon.MonoBehaviour {
 	[SerializeField]
 	Transform[] firePoints;
 
+	int lastProjectileID = 0;
+
+	List<NetworkProjectile> projectiles = new List<NetworkProjectile> ();
+
 	// Update is called once per frame
 	void Update () {
 		if(photonView.isMine) {
-			fireTime += Time.deltaTime;
-
 			if(Input.GetAxis ("Fire1") > 0f) {
-				if(fireTime >= fireRate) {
-					photonView.RPC ("CreateProjectile", PhotonTargets.MasterClient);
+				if(Time.realtimeSinceStartup - fireTime >= fireRate) {
+					lastProjectileID++;
+					photonView.RPC ("OnShoot", PhotonTargets.All, new object[]{transform.position, lastProjectileID});
 				}
 			}
 		}
 	}
+	
+	void CreateProjectile(Vector3 position, double createTime, int projectileID) {
+		fireTime = Time.realtimeSinceStartup;
+
+		foreach(Transform firePoint in firePoints) {
+			GameObject obj = ((GameObject)Instantiate(missile.gameObject, firePoint.position, Quaternion.identity));
+
+			NetworkProjectile projectile = obj.GetComponent<NetworkProjectile>();
+
+			projectile.SetCreationTime(createTime);
+			projectile.SetProjectileID(projectileID);
+			projectile.SetOwner (GetComponent<NetworkCharacter>());
+
+			projectiles.Add (projectile);
+
+			obj.GetComponent<Rigidbody>().AddForce(firePoint.forward * firePower, ForceMode.Impulse);
+		}
+	}
+
+	public void SendProjectileHit(int projectileID) {
+		photonView.RPC ("OnProjectileHit", PhotonTargets.Others, new object[]{projectileID});
+	}
 
 	[RPC]
-	void CreateProjectile() {
-		foreach(Transform firePoint in firePoints) {
-			Rigidbody obj = PhotonNetwork.Instantiate(missile.gameObject.name, firePoint.position, Quaternion.identity, 0).GetComponent<Rigidbody>();
-			obj.gameObject.GetComponent<SphereCollider>().enabled = true;
-			obj.useGravity = true;
-			obj.AddForce(firePoint.forward * firePower, ForceMode.Impulse);
+	void OnShoot(Vector3 position, int projectileID, PhotonMessageInfo info) {
+		double timestamp = PhotonNetwork.time;
+
+		if(info != null) {
+			timestamp = info.timestamp;
 		}
-		
-		fireTime = 0;
+
+		CreateProjectile (position, timestamp, projectileID);
+	}
+
+	[RPC]
+	void OnProjectileHit(int projectileID) {
+		projectiles.RemoveAll (item => item == null);
+
+		NetworkProjectile projectile = projectiles.Find (item => item.GetProjectileID () == projectileID);
+
+		if(projectile != null) {
+			projectile.OnProjectileHit();
+			projectiles.Remove(projectile);
+		}
 	}
 }

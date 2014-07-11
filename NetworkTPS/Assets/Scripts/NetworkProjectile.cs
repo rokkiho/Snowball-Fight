@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(PhotonView))]
-public class NetworkProjectile : Photon.MonoBehaviour {
+public class NetworkProjectile : MonoBehaviour {
 
 	[SerializeField]
 	float lifeTime = 2f;
@@ -11,12 +10,16 @@ public class NetworkProjectile : Photon.MonoBehaviour {
 	
 	[SerializeField]
 	float damage = 10;
-	
+
 	[SerializeField]
 	Transform explosionEffect;
 
 	Vector3 realPosition = Vector3.zero;
 	Quaternion realRotation = Quaternion.identity;
+
+	NetworkCharacter owner;
+	int projectileID;
+	double creationTime;
 
 	void Start() {
 		realPosition = transform.position;
@@ -25,53 +28,40 @@ public class NetworkProjectile : Photon.MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(PhotonNetwork.isMasterClient) {
-			elapsedTime += Time.deltaTime;
-			
-			if(elapsedTime >= lifeTime) {
-				photonView.RPC ("DestroyProjectile", PhotonTargets.All);
-			}
-		}
-
-		if(photonView.isMine) {
-			
-		}
-		else {
-			transform.position = Vector3.Lerp(transform.position, realPosition, 0.2f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, realRotation, 0.2f);
+		float timePassed = (float)(PhotonNetwork.time - creationTime);
+		
+		if(timePassed > lifeTime) {
+			OnProjectileHit();
 		}
 	}
 
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
-		if(stream.isWriting) {
-			// This is OURS'
-			stream.SendNext(transform.position);
-			stream.SendNext(transform.rotation);
-		}
-		else {
-			// This is others'
-			realPosition = (Vector3)stream.ReceiveNext();
-			realRotation = (Quaternion)stream.ReceiveNext();
-		}
+	public void SetCreationTime(double time) {
+		creationTime = time;
+	}
+
+	public void SetOwner(NetworkCharacter owner) {
+		this.owner = owner;
+	}
+
+	public void SetProjectileID(int id) {
+		projectileID = id;
+	}
+
+	public int GetProjectileID() {
+		return projectileID;
+	}
+
+	public void OnProjectileHit() {
+		Instantiate (explosionEffect, transform.position, Quaternion.identity);
+		Destroy (gameObject);
 	}
 
 	void OnCollisionEnter(Collision col) {
-		NetworkCharacter character = col.gameObject.GetComponentInChildren<NetworkCharacter>();
-		if(character != null) {
+		NetworkCharacter character = col.gameObject.GetComponent<NetworkCharacter>();
+		if(character != null && !character.GetNetworkView().isMine) {
 			PlayerHUD.ShowCrossHairHit();
-			character.ApplyDamage(damage);
+			//character.GetNetworkView().RPC ("ApplyDamage", PhotonTargets.All, damage);
 		}
-		
-		photonView.RPC ("DestroyProjectile", PhotonTargets.All);
-	}
-
-	[RPC]
-	void DestroyProjectile() {
-		Instantiate (explosionEffect, transform.position, Quaternion.identity);
-		if(photonView.instantiationId == 0)
-			Destroy (gameObject);
-		else if(PhotonNetwork.isMasterClient) {
-			PhotonNetwork.Destroy (gameObject);
-		}
+		OnProjectileHit();
 	}
 }

@@ -13,6 +13,8 @@ public class NetworkManager : MonoBehaviour {
 	bool playerNameSubmitted = false;
 
 	void Connect() {
+		if(PhotonNetwork.connectionState != ConnectionState.Disconnected) return;
+
 		HUDController.ShowRoomHUD ();
 
 		if(offlineMode) {
@@ -44,7 +46,10 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	void OnPhotonRandomJoinFailed() {
-		PhotonNetwork.CreateRoom (null);
+		RoomOptions roomOptions = new RoomOptions ();
+		roomOptions.maxPlayers = 20;
+
+		PhotonNetwork.JoinOrCreateRoom(Random.Range(0f, 1000f) + "#Room", roomOptions, TypedLobby.Default);
 	}
 
 	void Update() {
