@@ -10,6 +10,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 	[SerializeField]
 	float maxHealth = 100;
 	float currHealth;
+	TeamType team = TeamType.None;
 
 	// Player movement
 	[SerializeField]
@@ -36,6 +37,10 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		realRotation = transform.rotation;
 		realHeadRotation = head.rotation;
 	}
+
+	float pingInSeconds;
+	float timeSinceLastUpdate;
+	float totalTimePassed;
 	
 	// Update is called once per frame
 	void Update () {
@@ -55,10 +60,6 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 			UpdateNetworkedHeadRotation();
 		}
 	}
-
-	float pingInSeconds;
-	float timeSinceLastUpdate;
-	float totalTimePassed;
 
 	void UpdateNetworkedPosition() {
 		transform.position = Vector3.Lerp (transform.position, realPosition, totalTimePassed / 5);
@@ -90,10 +91,6 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		controller.Move (moveDirection * Time.deltaTime);
 	}
 
-	public void SetName(string name) {
-		playerName = name;
-	}
-
 	public float GetCurrHealth() {
 		return currHealth;
 	}
@@ -101,18 +98,31 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 	public float GetMaxHealth() {
 		return maxHealth;
 	}
-
+	
 	public PhotonView GetNetworkView() {
 		return photonView;
 	}
 
+	public TeamType GetTeam() {
+		return team;
+	}
+
+	public void SetName(string name) {
+		playerName = name;
+	}
+
+	public void SetTeam(TeamType team) {
+		this.team = team;
+	}
+
 	[RPC]
-	public void ApplyDamage(float amount) {
+	public void ApplyDamage(float amount, PhotonPlayer other) {
 		if(photonView.isMine) {
 			currHealth -= amount;
 			
 			if(currHealth <= 0) {
 				currHealth = 0;
+				NetworkMatch.AKillsB(other, PhotonNetwork.player);
 				Die();
 			}
 		}
@@ -132,7 +142,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		if(stream.isWriting) {
 			// This is OURS
 
-			stream.SendNext(playerName);
+			stream.SendNext(PhotonNetwork.player.name);
 			stream.SendNext(currHealth);
 			stream.SendNext(transform.position);
 			stream.SendNext(transform.rotation);
@@ -149,5 +159,10 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 
 			lastNetworkReceivedTime = info.timestamp;
 		}
+	}
+
+	[RPC]
+	public void OnChangeTeam(TeamType team) {
+		this.team = team;
 	}
 }

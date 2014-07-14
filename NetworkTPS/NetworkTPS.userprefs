@@ -1,9 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkCharacter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkMatch.cs">
     <Files>
-      <File FileName="Assets\Scripts\NetworkProjectile.cs" Line="34" Column="22" />
-      <File FileName="Assets\Scripts\NetworkCharacter.cs" Line="35" Column="3" />
+      <File FileName="Assets\Scripts\NetworkMatch.cs" Line="173" Column="63" />
+      <File FileName="Assets\Scripts\NetworkManager.cs" Line="18" Column="32" />
+      <File FileName="Assets\Scripts\NetworkCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FireProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HPHUD.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerHUD.cs" Line="18" Column="2" />
+      <File FileName="Assets\Scripts\NetworkRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KDAHUD.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\HUDController.cs" Line="20" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,28 +1,90 @@
 ﻿using UnityEngine;
-using System.Collections;
+using ExitGames.Client.Photon;
 
 public enum MatchType {
 	None = 0,
 	DeathMatch = 1,
 	TeamDeathMatch = 2,
+	MeltTheCastle = 3,
+	CarryTheSnow = 4,
+	RandomMatch = 5
+}
+
+public enum TeamType {
+	None = 0,
+	Team1 = 1,
+	Team2 = 2
 }
 
 internal abstract class Match {
+	// Respawn properties
 	protected bool respawnStarted;
 	protected float respawnTime;
-
 	protected float respawnDelay;
-
+	protected GameObject[] respawns;
 	protected GameObject overviewCamera;
 
+	// Player properties
 	protected GameObject player;
+	protected TeamType teamType = TeamType.None;
 
-	protected GameObject[] respawns;
+	// Match properties
+	protected static bool friendlyFireEnabled = false;
+	//protected static Hashtable matchProperties = new Hashtable();
 
+	// Methods	
 	public abstract void InitMatch ();
 	public abstract void UpdateMatch ();
-
 	public abstract void SpawnMyPlayer ();
+	public abstract void ChangeTeam (TeamType team);
+	public static bool IsFriendlyFireEnabled() {
+		return friendlyFireEnabled;
+	}
+	public void OnPlayerJoin () {
+		Hashtable setPlayerTeam = new Hashtable () {{"Team", teamType}};
+		PhotonNetwork.player.SetCustomProperties (setPlayerTeam);
+
+		Hashtable setPlayerKills = new Hashtable () {{"Kills", 0}};
+		PhotonNetwork.player.SetCustomProperties (setPlayerKills);
+
+		Hashtable setPlayerDeaths = new Hashtable () {{"Deaths", 0}};
+		PhotonNetwork.player.SetCustomProperties (setPlayerDeaths);
+
+		Hashtable setPlayerAssists = new Hashtable () {{"Assists", 0}};
+		PhotonNetwork.player.SetCustomProperties (setPlayerAssists);
+	}
+	public static void OnAKillsB(PhotonPlayer a, PhotonPlayer b, PhotonPlayer[] assists = null) {
+		int aKills = (int)a.customProperties ["Kills"];
+		aKills++;
+
+		Hashtable setPlayerKills = new Hashtable () {{"Kills", aKills}};
+		a.SetCustomProperties (setPlayerKills);
+
+		int bDeaths = (int)b.customProperties ["Deaths"];
+		bDeaths++;
+
+		Hashtable setPlayerDeaths = new Hashtable () {{"Deaths", bDeaths}};
+		b.SetCustomProperties (setPlayerDeaths);
+
+		if(assists != null)
+			foreach(PhotonPlayer player in assists) {
+				int pAssists = (int)player.customProperties ["Assists"];
+				pAssists++;
+
+				Hashtable setPlayerAssists = new Hashtable() {{"Assists", pAssists}};
+				player.SetCustomProperties(setPlayerAssists);
+			}
+
+		//DebugScore ();
+	}
+	static void DebugScore() {
+		PhotonPlayer[] players = PhotonNetwork.playerList;
+
+		foreach(PhotonPlayer player in players) {
+			Debug.Log ("==" + player.name + "==");
+			Debug.Log ("K: " + player.customProperties["Kills"] + ", D: " + player.customProperties["Deaths"] + ", A: " + player.customProperties["Assists"]);
+		}
+	}
 }
 
 internal class DeathMatch : Match {
@@ -30,6 +92,20 @@ internal class DeathMatch : Match {
 		overviewCamera = GameObject.FindGameObjectWithTag ("OverviewCamera");
 		respawns = GameObject.FindGameObjectsWithTag ("Respawn");
 		respawnDelay = 5f;
+		teamType = TeamType.None;
+
+		if(PhotonNetwork.isMasterClient) {
+			Hashtable matchProperties = new Hashtable();
+			matchProperties.Add ("gameType", "deathmatch");
+
+			string[] customPropertiesForLobby = new string[1];
+			customPropertiesForLobby[0] = "gameType";
+
+			PhotonNetwork.room.SetCustomProperties (matchProperties);
+			PhotonNetwork.room.SetPropertiesListedInLobby (customPropertiesForLobby);
+		}
+
+		OnPlayerJoin ();
 	}
 
 	public override void UpdateMatch() {
@@ -93,7 +169,12 @@ internal class DeathMatch : Match {
 		
 		player.transform.FindChild ("Head/Main Camera").gameObject.SetActive (true);
 		
-		player.GetComponent<NetworkCharacter> ().SetName (NetworkManager.GetPlayerName());
+		player.GetComponent<NetworkCharacter> ().SetName (PhotonNetwork.player.name);
+		player.GetComponent<NetworkCharacter> ().SetTeam (teamType);
+	}
+
+	public override void ChangeTeam (TeamType team) {
+		// Do nothing since this is a deathmatch
 	}
 }
 
@@ -102,13 +183,15 @@ public class NetworkMatch : Photon.MonoBehaviour {
 	Match match;
 
 	void InitMatch(MatchType matchType) {
-		match = null;
-
 		switch(matchType) {
 		case MatchType.DeathMatch:
 			this.matchType = matchType;
 			match = new DeathMatch();
 			match.InitMatch();
+			break;
+		case MatchType.RandomMatch:
+			int type = Random.Range (1, 4);
+			InitMatch ((MatchType)type);
 			break;
 		default:
 			break;
@@ -124,9 +207,17 @@ public class NetworkMatch : Photon.MonoBehaviour {
 		InitMatch (matchType);
 	}
 
+	public static bool IsFriendlyFireEnabled() {
+		return Match.IsFriendlyFireEnabled ();
+	}
+
 	void Update() {
 		if(match != null)
 			match.UpdateMatch();
+	}
+
+	public static void AKillsB(PhotonPlayer a, PhotonPlayer b, PhotonPlayer[] assists = null) {
+		Match.OnAKillsB (a, b, assists);
 	}
 
 	[RPC]
@@ -139,5 +230,17 @@ public class NetworkMatch : Photon.MonoBehaviour {
 	void GetMatchInfo(int matchType) {
 		if(this.matchType == MatchType.None || this.matchType != (MatchType)matchType)
 			InitMatch ((MatchType)matchType);
+	}
+
+	public static int GetLocalPlayerKills() {
+		return (int)PhotonNetwork.player.customProperties["Kills"];
+	}
+
+	public static int GetLocalPlayerDeaths() {
+		return (int)PhotonNetwork.player.customProperties["Deaths"];
+	}
+
+	public static int GetLocalPlayerAssists() {
+		return (int)PhotonNetwork.player.customProperties["Assists"];
 	}
 }

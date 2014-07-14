@@ -14,6 +14,10 @@ public class HUDController : MonoBehaviour {
 		RoomHUD = GameObject.Find ("RoomHUD");
 		PlayerHUD = GameObject.Find ("PlayerHUD");
 		PlayerNameHUD = GameObject.Find ("PlayerNameHUD");
+
+		RoomHUD.SetActive (false);
+		PlayerHUD.SetActive (false);
+		PlayerNameHUD.SetActive (false);
 	}
 
 	public static void ShowRoomHUD() {

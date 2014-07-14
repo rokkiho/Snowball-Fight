@@ -221,12 +221,12 @@
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\HPHUD.cs" />
      <Compile Include="Assets\Scripts\HUDController.cs" />
+     <Compile Include="Assets\Scripts\KDAHUD.cs" />
      <Compile Include="Assets\Scripts\NetworkCharacter.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\NetworkMatch.cs" />
      <Compile Include="Assets\Scripts\NetworkProjectile.cs" />
      <Compile Include="Assets\Scripts\NetworkRoom.cs" />
-     <Compile Include="Assets\Scripts\NetworkTeam.cs" />
      <Compile Include="Assets\Scripts\ParticleEffect.cs" />
      <Compile Include="Assets\Scripts\PlayerHUD.cs" />
      <Compile Include="Assets\Scripts\PlayerName.cs" />

@@ -25,7 +25,7 @@ Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Man
 Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\ProCore.dll into Unity Child Domain
 Platform assembly: G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll (this message is harmless)
 Loading G:\GitHub\Snowball-Fight\NetworkTPS\Builds\TestBuild_Data\Managed\SixBySeven.dll into Unity Child Domain
-- Completed reload, in  0.180 seconds
+- Completed reload, in  0.186 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
@@ -35,7 +35,47 @@ Joined Lobby
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Joined Room: 67.13581#Room
+Joined Room: 615.2474#Room
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+==xxc==
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+K: 0, D: 1, A: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+==dds==
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+K: 1, D: 0, A: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Received RPC "ApplyDamage" for viewID 1001 but this PhotonView does not exist! View was/is ours. Remote called.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+==xxc==
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+K: 0, D: 2, A: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+==dds==
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+K: 2, D: 0, A: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Received RPC "ApplyDamage" for viewID 1002 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

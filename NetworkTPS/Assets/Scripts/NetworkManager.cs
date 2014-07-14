@@ -6,7 +6,7 @@ public class NetworkManager : MonoBehaviour {
 	[SerializeField]
 	string version = "0.0.5adprev";
 
-	static string playerName;
+	static int maxPlayersPerRoom = 20;
 
 	bool offlineMode = false;
 
@@ -47,7 +47,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnPhotonRandomJoinFailed() {
 		RoomOptions roomOptions = new RoomOptions ();
-		roomOptions.maxPlayers = 20;
+		roomOptions.maxPlayers = maxPlayersPerRoom;
 
 		PhotonNetwork.JoinOrCreateRoom(Random.Range(0f, 1000f) + "#Room", roomOptions, TypedLobby.Default);
 	}
@@ -75,14 +75,14 @@ public class NetworkManager : MonoBehaviour {
 		string name = GameObject.Find ("NameInput").transform.FindChild("Label").GetComponent<UILabel> ().text;
 
 		if(name != null && name.Length > 0) {
-			playerName = name;
+			PhotonNetwork.player.name = name;
 			playerNameSubmitted = true;
 			Connect();
 		}
 
 	}
 
-	public static string GetPlayerName() {
-		return playerName;
+	public static int GetMaxPlayersPerRoom() {
+		return maxPlayersPerRoom;
 	}
 }
